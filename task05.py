@@ -12,6 +12,11 @@ Examples:
 from typing import List
 
 def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
+    """
+    :param nums: sequense
+    :param k: number of numbers
+    :return: summ of k numbers in nums
+    """
     result = 0
     while k>0:
         Max = max(nums)

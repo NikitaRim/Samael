@@ -9,6 +9,10 @@ We guarantee, that the given sequence contain >= 0 integers inside.
 from collections.abc import Sequence
 
 def check_fibonacci(data: Sequence[int]) -> bool:
+    """
+    :param data: Sequense
+    :return: True or False
+    """
     c = 0
     if len(data)>=3:
         for i in range(len(data)-2):

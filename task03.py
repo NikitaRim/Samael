@@ -16,6 +16,10 @@ with open("some_file.txt") as fi:
 from typing import Tuple
 
 def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
+    """
+    :param file_name: min_and_max
+    :return: min(data) and max(data)
+    """
     with open('min_and_max.txt') as fi:
         for line in fi:
             data = [int(x) for x in line.split(" ")]
