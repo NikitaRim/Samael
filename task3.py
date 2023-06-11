@@ -19,12 +19,19 @@ print(custom_sum.__original_func)  # <function custom_sum at <some_id>>
 import functools
 
 def save_info(original_func):
-    def decorator(func):
-        func.__name__ = original_func.__name__
-        func.__doc__ = original_func.__doc__
-        func.__original_func = original_func
-        return  func
-    return decorator
+    """Decorator that saves information about the decorated function"""
+    def decorated_func(*args, **kwargs):
+        # Do something before the original function is called
+        result = original_func(*args, **kwargs)
+        # Do something after the original function is called
+        return result
+
+    # Set attributes on the decorated function
+    decorated_func.__name__ = original_func.__name__
+    decorated_func.__doc__ = original_func.__doc__
+    decorated_func.__original_func = original_func
+
+    return decorated_func
 
 def print_result(func):
     @save_info(func)
